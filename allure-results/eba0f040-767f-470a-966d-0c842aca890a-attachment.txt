@@ -1,0 +1,2 @@
+2026-08-13 21:46:02 [info] [login.spec] Opening the TTACart login page
+2026-08-13 21:46:02 [info] [LoginPage] Open login pgae
