@@ -12,7 +12,10 @@
     "resolveJsonModule": true,
     "paths": {
       "@pages/*": ["./src/pages/*"],
-      "@utils/*": ["./src/utils/*"]
+      "@utils/*": ["./src/utils/*"],
+      "@fixtures/*": ["./src/fixtures/*"],
+      "@config/*": ["./src/config/*"],
+      "@testdata/*": ["./src/testdata/*"]
     }
   },
   "include": ["src/**/*"]
