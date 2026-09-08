@@ -78,6 +78,35 @@ export class DataGenerator {
         return faker.location.zipCode();
     }
 
+    // ---------- generic helpers ----------
+
+    /** Integer between min and max (inclusive). */
+    static number(min = 0, max = 100): number {
+        return faker.number.int({ min, max });
+    }
+
+    /** Random boolean. */
+    static bool(): boolean {
+        return faker.datatype.boolean();
+    }
+
+    /** Pick a random element from an array. */
+    static oneOf<T>(arr: readonly T[]): T {
+        return faker.helpers.arrayElement(arr);
+    }
+
+    /**
+     * Date offset from a base date.
+     * @param days number of days to add (can be negative)
+     * @param base optional base date; defaults to today
+     * @returns ISO date string (YYYY-MM-DD)
+     */
+    static dateOffset(days: number, base: Date | string = new Date()): string {
+        const d = new Date(base);
+        d.setDate(d.getDate() + days);
+        return d.toISOString().split('T')[0];
+    }
+
     // ---------- composites ----------
 
     /** Customer info for the TTACart checkout step-one form. */
